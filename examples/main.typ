@@ -1,9 +1,7 @@
 #import "@preview/touying:0.6.1": *
-#import "@preview/cetz:0.3.3"
-#import "@preview/fletcher:0.5.5" as fletcher: node, edge
-#import "sjtu.typ": *
-
-#import "@preview/numbly:0.1.0": numbly
+#import "@preview/cetz:0.3.4"
+#import "@preview/fletcher:0.5.6" as fletcher: node, edge
+#import "../lib.typ": *
 
 #let cetz-canvas = touying-reducer.with(reduce: cetz.canvas, cover: cetz.draw.hide.with(bounds: true))
 #let fletcher-diagram = touying-reducer.with(reduce: fletcher.diagram, cover: fletcher.hide)
@@ -230,13 +228,13 @@ Touying 社区正在探索与更多 Typst 包的集成，详细情况可查阅#l
   - 本模板仓库位于 #link("https://github.com/tzhTaylor/touying-sjtu")，欢迎关注与贡献。
 ]
 
-#end-slide-white[
+#end-slide[
   感谢聆听
 
   Thanks for Listening!
 ]
 
-#end-slide[
+#end-slide-red[
   感谢聆听
 
   Thanks for Listening!

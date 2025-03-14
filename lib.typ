@@ -1,5 +1,4 @@
-// This theme is inspired by https://github.com/zbowang/BeamerTheme
-// The typst version was written by https://github.com/OrangeX4
+// This theme is inspired by https://github.com/zbowang/BeamerTheme and https://github.com/touying-typ/touying/blob/main/themes/dewdrop.typ
 
 #import "@preview/touying:0.6.1": *
 
@@ -193,16 +192,16 @@
       inset: 3em,
       {
         block(
-          text(size: 1.5em, fill: self.colors.primary, weight: "bold", info.title)
+          text(size: 1.6em, fill: self.colors.primary, weight: "bold", info.title)
             + (
               if info.subtitle != none {
                 linebreak()
-                text(size: 1.2em, fill: self.colors.primary, weight: "bold", info.subtitle)
+                text(size: 1.3em, fill: self.colors.primary, weight: "bold", info.subtitle)
               }
             ),
         )
         v(3em)
-        set text(size: 1em, fill: self.colors.neutral-dark, weight: "medium")
+        set text(size: 1.1em, fill: self.colors.neutral-dark, weight: "medium")
         if info.author != none {
           block(spacing: 1em, info.author)
         }
@@ -246,7 +245,7 @@
       width: 100%,
       {
         block(
-          inset: (y: 1.5em, x: 3em),
+          inset: (y: 1.6em, x: 3em),
           text(size: 1.5em, fill: self.colors.neutral-light, weight: "bold", info.title)
             + (
               if info.subtitle != none {
@@ -258,16 +257,16 @@
         grid(
           columns: (70%, 30%),
           block({
-            set text(size: 1em, fill: self.colors.neutral-light, weight: "semibold")
+            set text(size: 1.1em, fill: self.colors.neutral-light, weight: "semibold")
             if info.author != none {
-              block(inset: (x: 3em), spacing: 0.8em, info.author)
+              block(inset: (x: 2.8em), spacing: 0.8em, info.author)
             }
             if info.date != none {
-              block(inset: (x: 3em), spacing: 0.8em, utils.display-info-date(self))
+              block(inset: (x: 2.8em), spacing: 0.8em, utils.display-info-date(self))
             }
             set text(size: .8em)
             if info.institution != none {
-              block(inset: (x: 3.6em), spacing: 0.8em, info.institution)
+              block(inset: (x: 3.4em), spacing: 0.8em, info.institution)
             }
           }),
           align(
@@ -375,16 +374,16 @@
 })
 
 
-#let end-slide-white(config: (:), body) = touying-slide-wrapper(self => {
+#let end-slide(config: (:), body) = touying-slide-wrapper(self => {
   self = utils.merge-dicts(
     self,
     config-common(freeze-slide-counter: true),
     config-page(margin: 2em),
   )
-  set text(fill: self.colors.primary, size: 1.75em, weight: "bold")
+  set text(fill: self.colors.primary, size: 1.65em, weight: "bold")
   let body = {
     set page(background: align(center + bottom, image("vi/east-gate.png")))
-    v(-1.5em)
+    v(-1em)
     image("vi/logo-ud.png", width: 30%)
 
     body
@@ -393,7 +392,7 @@
 })
 
 
-#let end-slide(config: (:), body) = touying-slide-wrapper(self => {
+#let end-slide-red(config: (:), body) = touying-slide-wrapper(self => {
   self = utils.merge-dicts(
     self,
     config-common(freeze-slide-counter: true),

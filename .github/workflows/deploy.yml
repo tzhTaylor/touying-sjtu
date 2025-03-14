@@ -35,7 +35,7 @@ jobs:
       - name: Build HTML File
         run: |
           mkdir -p build
-          touying compile ./examples/main.typ --root . --output build/index.html --format html --font-paths fonts
+          touying compile ./examples/main.typ --root . --output build/index.html --format html --font-paths touying-sjtu-fonts
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3

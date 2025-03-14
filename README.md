@@ -2,7 +2,7 @@
 
 本模板基于 Touying [Dewdrop](https://github.com/touying-typ/touying/blob/main/themes/dewdrop.typ) 主题开发。
 
-![](https://github.com/tzhTaylor/touying-sjtu/thumbnail.png)
+![Thumbnail of the project](https://github.com/tzhTaylor/touying-sjtu/blob/main/thumbnail.png)
 
 ## 示例
 

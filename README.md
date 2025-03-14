@@ -18,7 +18,7 @@ $ typst compile ./examples/main.typ --root .
 
 ## 使用 Typst Universe 模板库版本
 
-使用 typst init @preview/touying-sjtu 创建一个新的项目，并应用该主题。
+使用 `typst init @preview/touying-sjtu` 创建一个新的项目，并应用该主题。
 
 ```console
 $ typst init @preview/touying-sjtu

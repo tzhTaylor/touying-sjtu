@@ -39,53 +39,6 @@
       linebreaks: self.store.mini-slides.at("linebreaks", default: true),
       short-heading: self.store.mini-slides.at("short-heading", default: true),
     )
-    grid(
-      inset: (x: 1.9em),
-      rows: (auto, auto),
-      row-gutter: 15%,
-      grid(
-        columns: (75%, 25%),
-        align(
-          left + horizon,
-          utils.display-current-heading(depth: self.slide-level, style: auto),
-        ),
-        align(
-          right + horizon,
-          image("vi/tri-gate.png"),
-        ),
-      ),
-      align(
-        center + horizon,
-        line(
-          length: 100%,
-          stroke: (paint: self.colors.primary, thickness: 1.5pt),
-        ),
-      ),
-    )
-  } else {
-    grid(
-      inset: (x: 1.9em),
-      rows: (auto, auto),
-      row-gutter: 15%,
-      grid(
-        columns: (75%, 25%),
-        align(
-          left + horizon,
-          utils.display-current-heading(depth: self.slide-level, style: auto),
-        ),
-        align(
-          right + horizon,
-          image("vi/tri-gate.png"),
-        ),
-      ),
-      align(
-        center + horizon,
-        line(
-          length: 100%,
-          stroke: (paint: self.colors.primary, thickness: 1.5pt),
-        ),
-      ),
-    )
   }
 }
 
@@ -469,7 +422,7 @@
     short-heading: true,
   ),
   mini-slides: (
-    height: 4em,
+    height: 3em,
     x: 2em,
     display-section: false,
     display-subsection: true,
@@ -480,7 +433,27 @@
   footer-right: context utils.slide-counter.display() + " / " + utils.last-slide-number,
   primary: rgb("#C9141E"),
   alpha: 60%,
-  subslide-preamble: none,
+  subslide-preamble: self => block(
+    grid(
+      rows: (auto, auto),
+      row-gutter: 3pt,
+      grid(
+        columns: (75%, 25%),
+        align(
+          left + horizon,
+          text(1.2em, weight: "bold", fill: self.colors.primary, utils.display-current-heading(depth: self.slide-level)),
+        ),
+        align(
+          right + horizon,
+          image("vi/tri-gate.png"),
+        ),
+      ),
+      line(
+        length: 100%,
+        stroke: (paint: self.colors.primary, thickness: 1.5pt),
+      ),
+    ),
+  ),
   ..args,
   body,
 ) = {
@@ -489,7 +462,7 @@
     sidebar,
   )
   mini-slides = utils.merge-dicts(
-    (height: 4em, x: 2em, display-section: false, display-subsection: true, linebreaks: true, short-heading: true),
+    (height: 3em, x: 2em, display-section: false, display-subsection: true, linebreaks: true, short-heading: true),
     mini-slides,
   )
   set text(size: 18pt)
@@ -503,9 +476,9 @@
       margin: if navigation == "sidebar" {
         (top: 2em, bottom: 1em, x: sidebar.width)
       } else if navigation == "mini-slides" {
-        (top: if mini-slides.linebreaks { mini-slides.height } else { 5.5em }, bottom: 3em, x: mini-slides.x)
+        (top: mini-slides.height, bottom: 2em, x: mini-slides.x)
       } else {
-        (top: 5em, bottom: 2em, x: mini-slides.x)
+        (top: 2em, bottom: 2em, x: mini-slides.x)
       },
     ),
     config-common(

@@ -478,7 +478,7 @@
   ),
   footer: none,
   footer-right: context utils.slide-counter.display() + " / " + utils.last-slide-number,
-  primary: rgb("#C9141E"),
+  primary: rgb("#C9141E"), //#A51F38
   alpha: 60%,
   subslide-preamble: none,
   ..args,

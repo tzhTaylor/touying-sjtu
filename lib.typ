@@ -260,15 +260,17 @@
   ..args,
 ) = touying-slide-wrapper(self => {
   self = utils.merge-dicts(self, config, config-common(freeze-slide-counter: true), config-page(
-    header: align(right + horizon, block(inset: (right: 0.3em, top: 0.3em), image("vi/logo.png"))),
+    header: align(right + horizon, block(inset: (right: 0.3em, top: 0.3em), image("vi/sjtu-vi-logo.png"))),
     margin: (top: 3.5em, bottom: 1.5em, x: 2em),
   ))
   let info = self.info + args.named()
   let body = {
     set par(leading: 1.6em)
     set align(center + horizon)
-    set page(background: align(left + bottom, image("vi/east-gate.png", width: if self.show-notes-on-second-screen
-      == right { 50% } else { 100% })))
+    set page(background: align(left + bottom, image(
+      "vi/sjtu-vi-sjtugate.png",
+      width: if self.show-notes-on-second-screen == right { 50% } else { 100% },
+    )))
     block(width: 100%, inset: 3em, {
       block(
         text(
@@ -325,7 +327,7 @@
   let body = {
     set par(leading: 1.6em)
     set align(left + bottom)
-    set page(background: align(left, image("vi/photo.jpg")))
+    set page(background: align(left, image("vi/sjtu-vi-sjtuphoto.jpg")))
     line(length: 100%, stroke: (paint: self.colors.neutral-light, thickness: 1.5pt))
     v(-1.15em)
     block(fill: self.colors.primary, width: 100%, {
@@ -365,7 +367,7 @@
           }
           v(0.5em)
         }),
-        align(right, block(inset: (x: 2em), image("vi/logo-white.png"))),
+        align(right, block(inset: (x: 2em), image("vi/sjtu-vi-logo-white.png"))),
       )
       v(2em)
     })
@@ -597,12 +599,14 @@
   ))
   set text(fill: self.colors.primary, size: 1.65em, weight: "bold")
   let body = {
-    set page(background: align(left + bottom, image("vi/east-gate.png", width: if self.show-notes-on-second-screen
-      == right { 50% } else { 100% })))
+    set page(background: align(left + bottom, image(
+      "vi/sjtu-vi-sjtugate.png",
+      width: if self.show-notes-on-second-screen == right { 50% } else { 100% },
+    )))
     block(width: 80%, grid(
       columns: (40%, 1fr),
       column-gutter: 0pt,
-      image("vi/logo-ud.png"), body,
+      image("vi/sjtu-vi-logo-ud.png"), body,
     ))
   }
   touying-slide(self: self, config: config, align(horizon + center, body))
@@ -616,7 +620,7 @@
   ))
   set text(fill: self.colors.primary, size: 1.75em, weight: "bold")
   let body = {
-    set page(background: align(left, image("vi/end.png")))
+    set page(background: align(left, image("vi/sjtu-vi-end.png")))
     v(3.6em)
     body
   }

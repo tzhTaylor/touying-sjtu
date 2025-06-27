@@ -267,10 +267,8 @@
   let body = {
     set par(leading: 1.6em)
     set align(center + horizon)
-    set page(background: align(left + bottom, image(
-      "vi/sjtu-vi-sjtugate.png",
-      width: if self.show-notes-on-second-screen == right { 50% } else { 100% },
-    )))
+    set page(background: align(left + bottom, image("vi/sjtu-vi-sjtubg.png", width: if self.show-notes-on-second-screen
+      == right { 50% } else { 100% })))
     block(width: 100%, inset: 3em, {
       block(
         text(
@@ -599,10 +597,8 @@
   ))
   set text(fill: self.colors.primary, size: 1.65em, weight: "bold")
   let body = {
-    set page(background: align(left + bottom, image(
-      "vi/sjtu-vi-sjtugate.png",
-      width: if self.show-notes-on-second-screen == right { 50% } else { 100% },
-    )))
+    set page(background: align(left + bottom, image("vi/sjtu-vi-sjtubg.png", width: if self.show-notes-on-second-screen
+      == right { 50% } else { 100% })))
     block(width: 80%, grid(
       columns: (40%, 1fr),
       column-gutter: 0pt,

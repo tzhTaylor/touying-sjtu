@@ -158,7 +158,7 @@
       grid(
         columns: (75%, 25%),
         align(left + horizon, utils.display-current-heading(depth: self.slide-level, style: auto)),
-        align(right + horizon, image("vi/tri-gate.png")),
+        align(right + horizon, image("vi/sjtu-vi-sjtugate.png", height: 0.9cm)),
       ),
       align(center + horizon, line(length: 100%, stroke: (paint: self.colors.primary, thickness: 1.5pt))),
     )
@@ -170,7 +170,7 @@
       grid(
         columns: (75%, 25%),
         align(left + horizon, utils.display-current-heading(depth: self.slide-level, style: auto)),
-        align(right + horizon, image("vi/tri-gate.png")),
+        align(right + horizon, image("vi/sjtu-vi-sjtugate.png")),
       ),
       align(center + horizon, line(length: 100%, stroke: (paint: self.colors.primary, thickness: 1.5pt))),
     )
@@ -380,7 +380,9 @@
 ///
 /// - title (string): The title of the slide. Default is `utils.i18n-outline-title`.
 #let outline-slide(config: (:), title: utils.i18n-outline-title, ..args) = touying-slide-wrapper(self => {
-  self = utils.merge-dicts(self, config-page(footer: sjtu-footer, margin: (top: 3em)))
+  self = utils.merge-dicts(self, config-common(freeze-slide-counter: true), config-page(footer: sjtu-footer, margin: (
+    top: 3em,
+  )))
   touying-slide(self: self, config: config, components.adaptive-columns(
     start: text(1.7em, fill: self.colors.primary, weight: "bold", utils.call-or-display(self, title)),
     text(fill: self.colors.neutral-darkest, outline(title: none, indent: 1em, depth: self.slide-level, ..args)),
@@ -524,11 +526,11 @@
       rows: (auto, auto),
       row-gutter: 15%,
       grid(
-        columns: (75%, 25%),
+        columns: (1fr, 35%),
         align(left + horizon, text(size: 1.9em, utils.display-current-heading(depth: self.slide-level, style: auto))),
-        align(right + horizon, image("vi/tri-gate.png")),
+        align(right + horizon, image("vi/sjtu-vi-sjtugate.png", height: 1.5cm)),
       ),
-      v(-1.6cm),
+      v(-2cm),
       align(center + horizon, line(length: 100%, stroke: (paint: self.colors.primary, thickness: 1.5pt))),
     ),
     footer: sjtu-footer,

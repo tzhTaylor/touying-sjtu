@@ -1,11 +1,12 @@
 #import "@preview/touying:0.6.1": *
-#import "@preview/cetz:0.3.4"
-#import "@preview/fletcher:0.5.6" as fletcher: node, edge
+#import "@preview/cetz:0.4.0"
+#import "@preview/fletcher:0.5.8" as fletcher: edge, node
 #import "../lib.typ": *
 
 #let cetz-canvas = touying-reducer.with(reduce: cetz.canvas, cover: cetz.draw.hide.with(bounds: true))
 #let fletcher-diagram = touying-reducer.with(reduce: fletcher.diagram, cover: fletcher.hide)
 
+#set text(lang: "zh")
 #show: sjtu-theme.with(
   aspect-ratio: "16-9",
   footer: self => self.info.institution,
@@ -88,10 +89,12 @@ Touying 取自中文里的「投影」，在英文中意为 project。相较而�
 
 在 Touying 数学公式中使用 `pause`:
 
-#touying-equation(`
+#touying-equation(
+  `
   f(x)  &= pause x^2 + 2x + 1  \
         &= pause (x + 1)^2  \
-`)
+`,
+)
 
 #meanwhile
 
@@ -216,7 +219,7 @@ Touying 社区正在探索与更多 Typst 包的集成，详细情况可查阅#l
 // appendix by freezing last-slide-number
 #show: appendix
 
-== 附注
+== 附注 <touying:unoutlined>
 
 #slide[
   - 您可以使用：
@@ -228,11 +231,13 @@ Touying 社区正在探索与更多 Typst 包的集成，详细情况可查阅#l
   - 本模板仓库位于 #link("https://github.com/tzhTaylor/touying-sjtu")，欢迎关注与贡献。
 ]
 
-= 参考文献
+== 参考文献 <touying:unoutlined>
 
-#slide[
+#slide(config: config-common(slide-level: 2))[
   #bibliography("ref.bib", title: none, style: "gb-7714-2015-numeric")
 ]
+
+== 结束页 <touying:unoutlined>
 
 #end-slide[
   感谢聆听

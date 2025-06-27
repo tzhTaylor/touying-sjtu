@@ -1,18 +1,17 @@
 #import "@preview/touying:0.6.1": *
-// #import "@preview/touying-sjtu:0.1.0": *
 #import "../lib.typ": *
 
-#show: sjtu-theme.with(config-info(
-  title: [Touying for SJTU: Customize Your Slide Title Here],
-  subtitle: [Customize Your Slide Subtitle Here],
-  author: [Authors],
-  date: datetime.today(),
-  institution: [Shanghai Jiao Tong University],
-))
+#show: sjtu-theme.with(
+  config-info(
+    title: [NL2SQL研讨],
+    author: [汤志豪],
+    date: datetime.today(),
+    institution: [],
+  ),
+  config-common(new-section-slide-fn: simple-new-section-slide),
+)
 
 #title-slide()
-
-#outline-slide()
 
 = The section I
 
@@ -61,8 +60,6 @@ Slide content.
 == Slide IV / iv
 
 Slide content.
-
-== End <touying:unoutlined>
 
 #end-slide[
   Thanks for Listening!
